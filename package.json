@@ -1,0 +1,44 @@
+{
+  "name": "pretty-ansi",
+  "version": "1.0.0",
+  "description": "Convert ANSI escape sequences to human readable text",
+  "keywords": [
+    "pretty",
+    "ansi",
+    "escape",
+    "sequences",
+    "testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrazauskas/pretty-ansi.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": "./index.js",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "scripts": {
+    "check": "dprint check",
+    "format": "dprint fmt",
+    "lint": "eslint . --config eslint.config.json --ext js",
+    "test": "mocha",
+    "test:coverage": "c8 --config c8.config.json npm run test",
+    "test:types": "tstyche"
+  },
+  "devDependencies": {
+    "ansi-escapes": "6.2.0",
+    "ansi-styles": "6.2.1",
+    "c8": "9.1.0",
+    "chai": "5.1.0",
+    "dprint": "0.45.0",
+    "eslint": "8.56.0",
+    "mocha": "10.3.0",
+    "tstyche": "^1.0.0-rc.2"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
