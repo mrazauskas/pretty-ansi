@@ -13,12 +13,22 @@
     "type": "git",
     "url": "git+https://github.com/mrazauskas/pretty-ansi.git"
   },
-  "license": "MIT",
   "funding": "https://github.com/sponsors/mrazauskas",
+  "license": "MIT",
   "type": "module",
-  "exports": "./index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./index.cjs",
+  "types": "./index.d.cts",
   "files": [
+    "index.d.cts",
     "index.d.ts",
+    "index.cjs",
     "index.js"
   ],
   "scripts": {
