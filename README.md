@@ -42,7 +42,7 @@ Keep in mind that the escape sequences are not validated. Unrecognized sequence 
 
 ## Related
 
-- [`jest-serializer-ansi-escapes`](https://github.com/mrazauskas/jest-serializer-ansi-escapes) - Jest snapshot serializer for ANSI escape sequences.
+[`jest-serializer-ansi-escapes`](https://github.com/mrazauskas/jest-serializer-ansi-escapes) — Jest snapshot serializer for ANSI escape sequences.
 
 ## License
 
