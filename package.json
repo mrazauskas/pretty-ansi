@@ -1,6 +1,6 @@
 {
   "name": "pretty-ansi",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Convert ANSI escape sequences to human readable text",
   "keywords": [
     "pretty",
