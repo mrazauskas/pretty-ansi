@@ -14,6 +14,7 @@
     "url": "git+https://github.com/mrazauskas/pretty-ansi.git"
   },
   "license": "MIT",
+  "funding": "https://github.com/sponsors/mrazauskas",
   "type": "module",
   "exports": "./index.js",
   "files": [
