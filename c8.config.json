@@ -1,6 +1,6 @@
 {
   "all": true,
-  "include": ["**/*.js"],
+  "include": ["**/*.cjs", "**/*.js"],
   "reporter": ["lcovonly", "text"],
   "tempDirectory": "./coverage/temp"
 }
