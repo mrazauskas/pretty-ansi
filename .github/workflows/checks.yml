@@ -10,6 +10,18 @@ on:
       - main
 
 jobs:
+  check:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+        with:
+          node-version: lts/*
+      - run: npm ci
+      - run: npm run check
+
   lint:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
     name: Lint
@@ -19,8 +31,7 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: npm install
-      - run: npm run check
+      - run: npm ci
       - run: npm run lint
 
   test-types:
@@ -32,7 +43,7 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: npm install
+      - run: npm ci
       - run: npm run test:types -- --target 5.0,latest
 
   test-node:
@@ -50,7 +61,7 @@ jobs:
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
+      - run: npm ci
       - run: npm run test
         env:
           FORCE_COLOR: true
@@ -69,7 +80,7 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: npm install
+      - run: npm ci
       - run: npm run test
         env:
           FORCE_COLOR: true
@@ -84,7 +95,7 @@ jobs:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: lts/*
-      - run: npm install
+      - run: npm ci
       - run: npm run test:coverage
         env:
           FORCE_COLOR: true
