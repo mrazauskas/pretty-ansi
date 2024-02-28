@@ -47,7 +47,7 @@
     "dprint": "0.45.0",
     "eslint": "8.57.0",
     "mocha": "10.3.0",
-    "tstyche": "1.0.0"
+    "tstyche": "1.1.0"
   },
   "engines": {
     "node": ">=16"
