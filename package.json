@@ -32,20 +32,18 @@
     "index.js"
   ],
   "scripts": {
-    "check": "dprint check",
-    "format": "dprint fmt",
-    "lint": "eslint . --config eslint.config.json --ext js",
+    "check": "biome check .",
+    "format": "biome format . --write",
     "test": "mocha",
     "test:coverage": "c8 --config c8.config.json npm run test",
     "test:types": "tstyche"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.6.4",
     "ansi-escapes": "6.2.1",
     "ansi-styles": "6.2.1",
     "c8": "9.1.0",
     "chai": "5.1.0",
-    "dprint": "0.45.1",
-    "eslint": "8.57.0",
     "mocha": "10.4.0",
     "tstyche": "2.0.0-beta.0"
   },

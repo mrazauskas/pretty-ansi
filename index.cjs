@@ -1,4 +1,4 @@
-const escape = "\u001b";
+const escapeCharacter = "\u001b";
 
 const colorText = new Map([
   ["0", "/"],
@@ -84,9 +84,9 @@ function colorOrStyleSequenceReplacer(sequenceText) {
 
   const colorParameters = sequenceText.match(/\d{1,3}/g) || ["0"];
 
-  colorParameters.forEach((colorParameter) => {
+  for (const colorParameter of colorParameters) {
     replacement.push(colorText.get(colorParameter) || "?");
-  });
+  }
 
   return `<${replacement.join(", ")}>`;
 }
@@ -96,9 +96,7 @@ function moveCursorByReplacer(sequenceText) {
   sequenceText = sequenceText.trimEnd();
 
   const parameterValue = sequenceText.match(/\[(\d*)/)[1];
-  const [command, parameterName, tailText] = commandText.get(
-    sequenceText.slice(-1),
-  );
+  const [command, parameterName, tailText] = commandText.get(sequenceText.slice(-1));
 
   replacement.push(command, parameterValue || 1, parameterName);
   replacement.push(parameterValue > 1 ? "s" : "");
@@ -116,9 +114,9 @@ function moveCursorToReplacer(sequenceText) {
 
   replacement.push(command);
 
-  parameterNames.forEach((parameterName) => {
+  for (const parameterName of parameterNames) {
     replacement.push(parameterName, parameterValues.shift() || 1);
-  });
+  }
 
   return `<${replacement.join("")}>\n`;
 }
@@ -127,10 +125,7 @@ function prettyAnsi(text) {
   return text
     .replace(/\u001b\[(\d*;?)*m/g, colorOrStyleSequenceReplacer)
     .replace(/.(?=\u001b)/g, (match) => `${match}\n`)
-    .replace(
-      /\u001b\[2J\n?\u001b\[(3J\n?\u001b\[H|0f)\n?/g,
-      "<clearTerminal>\n",
-    )
+    .replace(/\u001b\[2J\n?\u001b\[(3J\n?\u001b\[H|0f)\n?/g, "<clearTerminal>\n")
     .replace(/\u001b\[\d*[A-FST]\n?/g, moveCursorByReplacer)
     .replace(/\u001b\[\d*G\n?/g, moveCursorToReplacer)
     .replace(/\u001b\[\d*;?\d*[Hf]\n?/g, moveCursorToReplacer)
@@ -146,7 +141,7 @@ function prettyAnsi(text) {
     .replace(/\u001b(\[u|8)\n?/g, "<restoreCursorPosition>\n")
     .replace(/\u001b\[\?25h\n?/g, "<showCursor>\n")
     .replace(/\u001b\[\?25l\n?/g, "<hideCursor>\n")
-    .replace(escape, "<ESC>");
+    .replace(escapeCharacter, "<ESC>");
 }
 
 module.exports = prettyAnsi;

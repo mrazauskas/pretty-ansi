@@ -49,27 +49,19 @@ describe("supports ansi-escapes", () => {
   });
 
   test("cursorTo(14)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorTo(14))).to.equal(
-      "<moveCursorToColumn15>\n",
-    );
+    expect(prettyAnsi(ansiEscapes.cursorTo(14))).to.equal("<moveCursorToColumn15>\n");
   });
 
   test("cursorTo(6, 18)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorTo(6, 18))).to.equal(
-      "<moveCursorToRow19Column7>\n",
-    );
+    expect(prettyAnsi(ansiEscapes.cursorTo(6, 18))).to.equal("<moveCursorToRow19Column7>\n");
   });
 
   test("cursorMove(5)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorMove(5))).to.equal(
-      "<moveCursorRightBy5Columns>\n",
-    );
+    expect(prettyAnsi(ansiEscapes.cursorMove(5))).to.equal("<moveCursorRightBy5Columns>\n");
   });
 
   test("cursorMove(-2)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorMove(-2))).to.equal(
-      "<moveCursorLeftBy2Columns>\n",
-    );
+    expect(prettyAnsi(ansiEscapes.cursorMove(-2))).to.equal("<moveCursorLeftBy2Columns>\n");
   });
 
   test("cursorMove(12, 3)", () => {
