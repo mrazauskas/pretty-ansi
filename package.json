@@ -32,7 +32,7 @@
     "index.js"
   ],
   "scripts": {
-    "check": "biome check .",
+    "check": "biome check . --apply",
     "format": "biome format . --write",
     "test": "mocha",
     "test:coverage": "c8 --config c8.config.json npm run test",

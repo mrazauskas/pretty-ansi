@@ -25,6 +25,10 @@
     }
   },
 
+  "organizeImports": {
+    "enabled": true
+  },
+
   "overrides": [
     {
       "include": ["test/**"],
