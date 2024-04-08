@@ -1,6 +1,5 @@
-import { expect } from "chai";
+import assert from "node:assert/strict";
 import { describe, test } from "mocha";
-
 import prettyAnsi from "pretty-ansi";
 
 describe("cursor and erase sequences", () => {
@@ -274,13 +273,13 @@ describe("cursor and erase sequences", () => {
 
   cases.forEach(({ caseName, sequence, expected }) => {
     test(caseName, () => {
-      expect(prettyAnsi(sequence)).to.equal(expected);
+      assert.strictEqual(prettyAnsi(sequence), expected);
     });
   });
 
   test("handles unrecognized sequence", () => {
-    expect(prettyAnsi("\u001b[a1b2c3")).to.equal("<ESC>[a1b2c3");
-    expect(prettyAnsi("\u001bd4e5f6")).to.equal("<ESC>d4e5f6");
+    assert.strictEqual(prettyAnsi("\u001b[a1b2c3"), "<ESC>[a1b2c3");
+    assert.strictEqual(prettyAnsi("\u001bd4e5f6"), "<ESC>d4e5f6");
   });
 });
 
@@ -425,11 +424,11 @@ describe("handles end of line characters", () => {
 
   cases.forEach(({ caseName, sequence, expected }) => {
     test(caseName, () => {
-      expect(prettyAnsi(sequence)).to.equal(`${expected}\n`);
-      expect(prettyAnsi(`${sequence}\n`)).to.equal(`${expected}\n`);
-      expect(prettyAnsi(`${sequence}\n\n`)).to.equal(`${expected}\n\n`);
-      expect(prettyAnsi(`${sequence}text`)).to.equal(`${expected}\ntext`);
-      expect(prettyAnsi(`text${sequence}`)).to.equal(`text\n${expected}\n`);
+      assert.strictEqual(prettyAnsi(sequence), `${expected}\n`);
+      assert.strictEqual(prettyAnsi(`${sequence}\n`), `${expected}\n`);
+      assert.strictEqual(prettyAnsi(`${sequence}\n\n`), `${expected}\n\n`);
+      assert.strictEqual(prettyAnsi(`${sequence}text`), `${expected}\ntext`);
+      assert.strictEqual(prettyAnsi(`text${sequence}`), `text\n${expected}\n`);
     });
   });
 });

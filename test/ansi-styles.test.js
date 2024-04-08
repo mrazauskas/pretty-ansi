@@ -1,36 +1,41 @@
+import assert from "node:assert/strict";
 import ansiStyle from "ansi-styles";
-import { expect } from "chai";
 import { describe, test } from "mocha";
-
 import prettyAnsi from "pretty-ansi";
 
 describe("supports ansi-styles", () => {
   test("supports style.red", async () => {
-    expect(prettyAnsi(`${ansiStyle.red.open} foo content ${ansiStyle.red.close}`)).to.equal(
+    assert.strictEqual(
+      prettyAnsi(`${ansiStyle.red.open} foo content ${ansiStyle.red.close}`),
       "<red> foo content </color>",
     );
   });
 
   test("supports style.green", () => {
-    expect(prettyAnsi(`${ansiStyle.green.open} foo content ${ansiStyle.green.close}`)).to.equal(
+    assert.strictEqual(
+      prettyAnsi(`${ansiStyle.green.open} foo content ${ansiStyle.green.close}`),
       "<green> foo content </color>",
     );
   });
 
   test("supports style.reset", () => {
-    expect(prettyAnsi(`${ansiStyle.reset.open} foo content ${ansiStyle.reset.close}`)).to.equal("</> foo content </>");
+    assert.strictEqual(
+      prettyAnsi(`${ansiStyle.reset.open} foo content ${ansiStyle.reset.close}`),
+      "</> foo content </>",
+    );
   });
 
   test("supports style.bold", () => {
-    expect(prettyAnsi(`${ansiStyle.bold.open} foo content`)).to.equal("<bold> foo content");
+    assert.strictEqual(prettyAnsi(`${ansiStyle.bold.open} foo content`), "<bold> foo content");
   });
 
   test("supports style.dim", () => {
-    expect(prettyAnsi(`${ansiStyle.dim.open} foo content`)).to.equal("<dim> foo content");
+    assert.strictEqual(prettyAnsi(`${ansiStyle.dim.open} foo content`), "<dim> foo content");
   });
 
   test("does not support other colors", () => {
-    expect(prettyAnsi(`${ansiStyle.blue.open} foo content ${ansiStyle.reset.close}`)).to.equal(
+    assert.strictEqual(
+      prettyAnsi(`${ansiStyle.blue.open} foo content ${ansiStyle.reset.close}`),
       "<blue> foo content </>",
     );
   });

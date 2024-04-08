@@ -1,6 +1,5 @@
-import { expect } from "chai";
+import assert from "node:assert/strict";
 import { describe, test } from "mocha";
-
 import prettyAnsi from "pretty-ansi";
 
 describe("color and style sequences", () => {
@@ -78,7 +77,7 @@ describe("color and style sequences", () => {
 
   cases.forEach(({ expected, sequence }) => {
     test(expected, () => {
-      expect(prettyAnsi(sequence)).to.equal(expected);
+      assert.strictEqual(prettyAnsi(sequence), expected);
     });
   });
 });

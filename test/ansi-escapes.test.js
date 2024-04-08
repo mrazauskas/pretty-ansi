@@ -1,7 +1,6 @@
+import assert from "node:assert/strict";
 import ansiEscapes from "ansi-escapes";
-import { expect } from "chai";
 import { describe, test } from "mocha";
-
 import prettyAnsi from "pretty-ansi";
 
 describe("supports ansi-escapes", () => {
@@ -27,7 +26,7 @@ describe("supports ansi-escapes", () => {
 
   cases.forEach(({ key, expected }) => {
     test(key, () => {
-      expect(prettyAnsi(`${ansiEscapes[key]}`)).to.equal(expected);
+      assert.strictEqual(prettyAnsi(`${ansiEscapes[key]}`), expected);
     });
   });
 
@@ -44,46 +43,50 @@ describe("supports ansi-escapes", () => {
 
   casesWithKey.forEach(({ arg, key, expected }) => {
     test(`${key}(${arg})`, () => {
-      expect(prettyAnsi(ansiEscapes[key](arg))).to.equal(expected);
+      assert.strictEqual(prettyAnsi(ansiEscapes[key](arg)), expected);
     });
   });
 
   test("cursorTo(14)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorTo(14))).to.equal("<moveCursorToColumn15>\n");
+    assert.strictEqual(prettyAnsi(ansiEscapes.cursorTo(14)), "<moveCursorToColumn15>\n");
   });
 
   test("cursorTo(6, 18)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorTo(6, 18))).to.equal("<moveCursorToRow19Column7>\n");
+    assert.strictEqual(prettyAnsi(ansiEscapes.cursorTo(6, 18)), "<moveCursorToRow19Column7>\n");
   });
 
   test("cursorMove(5)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorMove(5))).to.equal("<moveCursorRightBy5Columns>\n");
+    assert.strictEqual(prettyAnsi(ansiEscapes.cursorMove(5)), "<moveCursorRightBy5Columns>\n");
   });
 
   test("cursorMove(-2)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorMove(-2))).to.equal("<moveCursorLeftBy2Columns>\n");
+    assert.strictEqual(prettyAnsi(ansiEscapes.cursorMove(-2)), "<moveCursorLeftBy2Columns>\n");
   });
 
   test("cursorMove(12, 3)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorMove(12, 3))).to.equal(
+    assert.strictEqual(
+      prettyAnsi(ansiEscapes.cursorMove(12, 3)),
       "<moveCursorRightBy12Columns>\n<moveCursorDownBy3Rows>\n",
     );
   });
 
   test("cursorMove(10, -8)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorMove(10, -8))).to.equal(
+    assert.strictEqual(
+      prettyAnsi(ansiEscapes.cursorMove(10, -8)),
       "<moveCursorRightBy10Columns>\n<moveCursorUpBy8Rows>\n",
     );
   });
 
   test("cursorMove(-5, 18)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorMove(-5, 18))).to.equal(
+    assert.strictEqual(
+      prettyAnsi(ansiEscapes.cursorMove(-5, 18)),
       "<moveCursorLeftBy5Columns>\n<moveCursorDownBy18Rows>\n",
     );
   });
 
   test("cursorMove(-17, -2)", () => {
-    expect(prettyAnsi(ansiEscapes.cursorMove(-21, -9))).to.equal(
+    assert.strictEqual(
+      prettyAnsi(ansiEscapes.cursorMove(-21, -9)),
       "<moveCursorLeftBy21Columns>\n<moveCursorUpBy9Rows>\n",
     );
   });
