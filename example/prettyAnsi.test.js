@@ -1,10 +1,10 @@
-import { expect } from "chai";
-import { test } from "mocha";
+import assert from "node:assert/strict";
+import { test } from "node:test";
 
 import prettyAnsi from "pretty-ansi";
 
 test("command output", () => {
   const commandOutput = "\u001b[3;32mSuccess!\u001b[0m";
 
-  expect(prettyAnsi(commandOutput)).to.equal("<italic, green>Success!</>");
+  assert.strictEqual(prettyAnsi(commandOutput), "<italic, green>Success!</>");
 });
