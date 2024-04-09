@@ -1,5 +1,3 @@
-const escapeCharacter = "\u001b";
-
 const colorText = new Map([
   ["0", "/"],
 
@@ -141,7 +139,7 @@ function prettyAnsi(text) {
     .replace(/\u001b(\[u|8)\n?/g, "<restoreCursorPosition>\n")
     .replace(/\u001b\[\?25h\n?/g, "<showCursor>\n")
     .replace(/\u001b\[\?25l\n?/g, "<hideCursor>\n")
-    .replace(escapeCharacter, "<ESC>");
+    .replace(/\u001b/g, "<ESC>");
 }
 
 module.exports = prettyAnsi;
