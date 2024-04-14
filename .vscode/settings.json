@@ -3,6 +3,5 @@
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
-  "editor.rulers": [80, 120],
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "editor.rulers": [80, 120]
 }
