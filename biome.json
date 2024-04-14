@@ -15,12 +15,20 @@
     "rules": {
       "recommended": true,
 
+      "correctness": {
+        "noUndeclaredVariables": "error",
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
+      },
+
       "style": {
-        "noParameterAssign": "off"
+        "noParameterAssign": "off",
+        "noNegationElse": "error"
       },
 
       "suspicious": {
-        "noControlCharactersInRegex": "off"
+        "noControlCharactersInRegex": "off",
+        "noEmptyBlockStatements": "error"
       }
     }
   },
