@@ -39,7 +39,7 @@
     "test:types": "tstyche"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.6.4",
+    "@biomejs/biome": "1.7.0",
     "ansi-escapes": "6.2.1",
     "ansi-styles": "6.2.1",
     "c8": "9.1.0",
