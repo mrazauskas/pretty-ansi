@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.2",
-    "ansi-escapes": "6.2.1",
+    "ansi-escapes": "7.0.0",
     "ansi-styles": "6.2.1",
     "c8": "9.1.0",
     "mocha": "10.4.0",
