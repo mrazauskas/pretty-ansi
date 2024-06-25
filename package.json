@@ -43,7 +43,7 @@
     "ansi-escapes": "7.0.0",
     "ansi-styles": "6.2.1",
     "c8": "10.1.2",
-    "mocha": "10.5.0",
+    "mocha": "10.5.1",
     "tstyche": "2.0.0"
   },
   "engines": {
