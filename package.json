@@ -44,7 +44,7 @@
     "ansi-styles": "6.2.1",
     "c8": "10.1.2",
     "mocha": "10.6.0",
-    "tstyche": "2.0.0"
+    "tstyche": "2.1.0"
   },
   "engines": {
     "node": ">=16"
