@@ -35,15 +35,15 @@
     "check": "biome check --write",
     "format": "biome format --write",
     "test": "mocha",
-    "test:coverage": "c8 --config c8.config.json npm run test",
+    "test:coverage": "mcr --config mcr.config.json -- npm run test",
     "test:types": "tstyche"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "ansi-escapes": "7.0.0",
     "ansi-styles": "6.2.1",
-    "c8": "10.1.2",
     "mocha": "10.6.0",
+    "monocart-coverage-reports": "2.9.3",
     "tstyche": "2.1.0"
   },
   "engines": {
