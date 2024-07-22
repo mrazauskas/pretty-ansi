@@ -1,5 +1,4 @@
-import assert from "node:assert/strict";
-import { describe, test } from "mocha";
+import { assert, describe, test } from "poku";
 import prettyAnsi from "pretty-ansi";
 
 describe("color and style sequences", () => {
@@ -75,9 +74,9 @@ describe("color and style sequences", () => {
     { expected: "<?>", sequence: "\u001b[321m" }, // unrecognized sequence
   ];
 
-  cases.forEach(({ expected, sequence }) => {
+  for (const { expected, sequence } of cases) {
     test(expected, () => {
       assert.strictEqual(prettyAnsi(sequence), expected);
     });
-  });
+  }
 });

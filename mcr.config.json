@@ -1,7 +1,8 @@
 {
   "entryFilter": {
+    "**/example/**": false,
     "**/node_modules/**": false,
-    "**/test/**": false,
+    "**/tests/**": false,
 
     "**/*.cjs": true,
     "**/*.js": true

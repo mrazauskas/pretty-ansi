@@ -1,6 +1,4 @@
-import assert from "node:assert/strict";
-import { test } from "node:test";
-
+import { assert, test } from "poku";
 import prettyAnsi from "pretty-ansi";
 
 test("command output", () => {

@@ -1,5 +1,4 @@
-import assert from "node:assert/strict";
-import { describe, test } from "mocha";
+import { assert, describe, test } from "poku";
 import prettyAnsi from "pretty-ansi";
 
 describe("cursor and erase sequences", () => {
@@ -271,11 +270,11 @@ describe("cursor and erase sequences", () => {
     },
   ];
 
-  cases.forEach(({ caseName, sequence, expected }) => {
+  for (const { caseName, sequence, expected } of cases) {
     test(caseName, () => {
       assert.strictEqual(prettyAnsi(sequence), expected);
     });
-  });
+  }
 
   test("handles unrecognized sequence", () => {
     assert.strictEqual(prettyAnsi("\u001b[a1b2c3"), "<ESC>[a1b2c3");
@@ -422,7 +421,7 @@ describe("handles end of line characters", () => {
     },
   ];
 
-  cases.forEach(({ caseName, sequence, expected }) => {
+  for (const { caseName, sequence, expected } of cases) {
     test(caseName, () => {
       assert.strictEqual(prettyAnsi(sequence), `${expected}\n`);
       assert.strictEqual(prettyAnsi(`${sequence}\n`), `${expected}\n`);
@@ -430,5 +429,5 @@ describe("handles end of line characters", () => {
       assert.strictEqual(prettyAnsi(`${sequence}text`), `${expected}\ntext`);
       assert.strictEqual(prettyAnsi(`text${sequence}`), `text\n${expected}\n`);
     });
-  });
+  }
 });
