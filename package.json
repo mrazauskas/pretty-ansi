@@ -44,7 +44,7 @@
     "ansi-styles": "6.2.1",
     "monocart-coverage-reports": "2.9.3",
     "poku": "2.2.3",
-    "tstyche": "2.1.0"
+    "tstyche": "2.1.1"
   },
   "engines": {
     "node": ">=16"
