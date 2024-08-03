@@ -43,7 +43,7 @@
     "ansi-escapes": "7.0.0",
     "ansi-styles": "6.2.1",
     "monocart-coverage-reports": "2.10.0",
-    "poku": "2.3.0",
+    "poku": "2.4.0",
     "tstyche": "2.1.1"
   },
   "engines": {
