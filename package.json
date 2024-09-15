@@ -39,7 +39,7 @@
     "test:types": "tstyche"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.0",
+    "@biomejs/biome": "1.9.1",
     "ansi-escapes": "7.0.0",
     "ansi-styles": "6.2.1",
     "monocart-coverage-reports": "2.10.5",
