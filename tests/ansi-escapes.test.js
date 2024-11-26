@@ -1,5 +1,6 @@
+import assert from "node:assert";
+import test from "node:test";
 import ansiEscapes from "ansi-escapes";
-import { assert, test } from "poku";
 import prettyAnsi from "pretty-ansi";
 
 const casesWithKey = [

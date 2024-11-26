@@ -34,7 +34,7 @@
   "scripts": {
     "check": "biome check --write",
     "format": "biome format --write",
-    "test": "poku",
+    "test": "node --test",
     "test:coverage": "mcr --config mcr.config.json -- npm run test",
     "test:types": "tstyche"
   },
@@ -43,7 +43,6 @@
     "ansi-escapes": "7.0.0",
     "ansi-styles": "6.2.1",
     "monocart-coverage-reports": "2.11.3",
-    "poku": "2.7.1",
     "tstyche": "3.0.0"
   },
   "engines": {

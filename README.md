@@ -22,7 +22,8 @@ npm add -D pretty-ansi
 For example, it can be useful to test the output of a command line tool:
 
 ```js
-import { assert, test } from "poku";
+import assert from "node:assert";
+import test from "node:test";
 import prettyAnsi from "pretty-ansi";
 
 test("command output", () => {

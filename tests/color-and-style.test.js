@@ -1,7 +1,8 @@
-import { assert, describe, test } from "poku";
+import assert from "node:assert";
+import test from "node:test";
 import prettyAnsi from "pretty-ansi";
 
-describe("color and style sequences", () => {
+test("color and style sequences", async (t) => {
   const cases = [
     { expected: "</>", sequence: "\u001b[m" }, // omitted zero
     { expected: "</>", sequence: "\u001b[0m" },
@@ -75,7 +76,7 @@ describe("color and style sequences", () => {
   ];
 
   for (const { expected, sequence } of cases) {
-    test(expected, () => {
+    await t.test(expected, () => {
       assert.strictEqual(prettyAnsi(sequence), expected);
     });
   }

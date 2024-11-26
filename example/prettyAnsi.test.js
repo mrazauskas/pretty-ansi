@@ -1,4 +1,5 @@
-import { assert, test } from "poku";
+import assert from "node:assert";
+import test from "node:test";
 import prettyAnsi from "pretty-ansi";
 
 test("command output", () => {

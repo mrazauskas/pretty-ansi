@@ -1,7 +1,8 @@
-import { assert, describe, test } from "poku";
+import assert from "node:assert";
+import test from "node:test";
 import prettyAnsi from "pretty-ansi";
 
-describe("cursor and erase sequences", () => {
+test("cursor and erase sequences", async (t) => {
   const cases = [
     {
       caseName: "clearTerminal",
@@ -271,18 +272,18 @@ describe("cursor and erase sequences", () => {
   ];
 
   for (const { caseName, sequence, expected } of cases) {
-    test(caseName, () => {
+    await t.test(caseName, () => {
       assert.strictEqual(prettyAnsi(sequence), expected);
     });
   }
 
-  test("handles unrecognized sequence", () => {
+  await t.test("handles unrecognized sequence", () => {
     assert.strictEqual(prettyAnsi("\u001b[a1b2c3"), "<ESC>[a1b2c3");
     assert.strictEqual(prettyAnsi("\u001bd4e5f6"), "<ESC>d4e5f6");
   });
 });
 
-describe("handles end of line characters", () => {
+test("handles end of line characters", async (t) => {
   const cases = [
     {
       caseName: "clearTerminal",
@@ -422,7 +423,7 @@ describe("handles end of line characters", () => {
   ];
 
   for (const { caseName, sequence, expected } of cases) {
-    test(caseName, () => {
+    await t.test(caseName, () => {
       assert.strictEqual(prettyAnsi(sequence), `${expected}\n`);
       assert.strictEqual(prettyAnsi(`${sequence}\n`), `${expected}\n`);
       assert.strictEqual(prettyAnsi(`${sequence}\n\n`), `${expected}\n\n`);

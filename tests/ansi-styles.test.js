@@ -1,5 +1,6 @@
+import assert from "node:assert";
+import test from "node:test";
 import ansiStyle from "ansi-styles";
-import { assert, test } from "poku";
 import prettyAnsi from "pretty-ansi";
 
 test("supports style.red", () => {
