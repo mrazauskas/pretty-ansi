@@ -2,5 +2,5 @@ import prettyAnsi from "pretty-ansi";
 import { expect, test } from "tstyche";
 
 test("prettyAnsi", () => {
-  expect(prettyAnsi("abc")).type.toBeString();
+  expect(prettyAnsi("abc")).type.toBe<string>();
 });
