@@ -9,7 +9,7 @@ Convert ANSI escape sequences to human readable text.
 
 ---
 
-This utility converts [ANSI escape sequences](https://en.wikipedia.org/wiki/ANSI_escape_code) to human readable text. It supports color, style and cursor control escapes and works with vanilla sequences as well as the output from libraries like `chalk`, `colors`, `ansi-escapes`, `ansi-styles` or `terminal-kit`.
+This utility converts [ANSI escape sequences](https://ansi.tools/lookup) to human readable text. It supports color, style and cursor control escapes and works with vanilla sequences as well as the output from libraries like `chalk`, `colors`, `ansi-escapes`, `ansi-styles` or `terminal-kit`.
 
 ## Install
 
