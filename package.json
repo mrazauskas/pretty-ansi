@@ -43,7 +43,7 @@
     "ansi-escapes": "7.2.0",
     "ansi-styles": "6.2.3",
     "monocart-coverage-reports": "2.12.9",
-    "tstyche": "5.0.0"
+    "tstyche": "5.0.1"
   },
   "engines": {
     "node": ">=18"
