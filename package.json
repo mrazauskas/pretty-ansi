@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.14",
-    "ansi-escapes": "7.2.0",
+    "ansi-escapes": "7.3.0",
     "ansi-styles": "6.2.3",
     "monocart-coverage-reports": "2.12.9",
     "tstyche": "6.2.0"
