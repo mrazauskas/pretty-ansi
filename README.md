@@ -2,7 +2,7 @@
 
 [![version][version-badge]][version-url]
 [![license][license-badge]][license-url]
-[![packagephobia][packagephobia-badge]][packagephobia-url]
+[![install-size][install-size-badge]][install-size-url]
 [![coverage][coverage-badge]][coverage-url]
 
 Convert ANSI escape sequences to human readable text.
@@ -51,7 +51,7 @@ Keep in mind that the escape sequences are not validated. Unrecognized sequence 
 [version-url]: https://npmjs.com/package/pretty-ansi
 [license-badge]: https://badgen.net/github/license/mrazauskas/pretty-ansi
 [license-url]: https://github.com/mrazauskas/pretty-ansi/blob/main/LICENSE.md
-[packagephobia-badge]: https://badgen.net/packagephobia/install/pretty-ansi
-[packagephobia-url]: https://packagephobia.com/result?p=pretty-ansi
-[coverage-badge]: https://badgen.net/codacy/coverage/3a26cda9352643b589953c686f921c40
-[coverage-url]: https://app.codacy.com/gh/mrazauskas/pretty-ansi/coverage/dashboard
+[install-size-badge]: https://badgen.net/packagephobia/install/pretty-ansi
+[install-size-url]: https://packagephobia.com/result?p=pretty-ansi
+[coverage-badge]: https://badgen.net/codecov/github/mrazauskas/pretty-ansi
+[coverage-url]: https://app.codecov.io/gh/mrazauskas/pretty-ansi
