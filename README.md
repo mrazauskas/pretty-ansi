@@ -39,10 +39,6 @@ Currently only 16 colors are all supported.
 
 Keep in mind that the escape sequences are not validated. Unrecognized sequence will print as `<ESC>[a1b2c3`, or as `<?>` in case this is a color or style sequence.
 
-## Related
-
-[`jest-serializer-ansi-escapes`](https://github.com/mrazauskas/jest-serializer-ansi-escapes) — Jest snapshot serializer for ANSI escape sequences.
-
 ## License
 
 [MIT][license-url]
