@@ -42,7 +42,7 @@
     "@biomejs/biome": "2.5.15",
     "ansi-escapes": "7.3.0",
     "ansi-styles": "7.0.0",
-    "monocart-coverage-reports": "2.13.0",
+    "monocart-coverage-reports": "2.13.1",
     "tstyche": "7.2.5"
   },
   "engines": {
